@@ -1,0 +1,15 @@
+.element__description {
+  margin: 25px 20px 31px 21px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  min-width: 240px;
+}
+
+@media screen and (max-width: 899px) {
+  .element__description {
+    min-width: 242px;
+  }
+}
