@@ -9,7 +9,7 @@
   margin: auto;
 }
 
-@media screen and (max-width: 899px) {
+@media (max-width: 900px) {
   .popup__container {
     width: 282px;
     min-height: 322px;
