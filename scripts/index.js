@@ -6,16 +6,16 @@ let profileNameElement= document.querySelector('.profile__name');
 
 let profileStatusElement = document.querySelector('.profile__status');
 
-let profileNameInput = document.querySelector('.popup__input_text-name');
+let profileNameInput = document.querySelector('.popup__input_text_name');
 
-let profileStatusInput = document.querySelector('.popup__input_text-status');
+let profileStatusInput = document.querySelector('.popup__input_text_status');
 
 let formElement = document.querySelector('.popup__form');
 
 function popupOpen () {
   editPopup.classList.add('popup_opened');
-  profileNameInput.value = profileNameElement.textContent
-  profileStatusInput.value = profileStatusElement.textContent
+  profileNameInput.value = profileNameElement.textContent;
+  profileStatusInput.value = profileStatusElement.textContent;
 }
 
 editProfileButton.addEventListener('click', popupOpen);
@@ -24,12 +24,10 @@ function popupClose () {
   editPopup.classList.remove('popup_opened');
 }
 
-closePopupButton.addEventListener('click', popupClose)
-
 function handleFormSubmit (evt) {
   evt.preventDefault();
-  profileNameElement.textContent = profileNameInput.value
-  profileStatusElement.textContent = profileStatusInput.value
-  editPopup.classList.remove('popup_opened');
+  profileNameElement.textContent = profileNameInput.value;
+  profileStatusElement.textContent = profileStatusInput.value;
+  closePopupButton.addEventListener('click', popupClose);
 }
 formElement.addEventListener('submit', handleFormSubmit); 
