@@ -24,10 +24,12 @@ function popupClose () {
   editPopup.classList.remove('popup_opened');
 }
 
+closePopupButton.addEventListener('click', popupClose);
+
 function handleFormSubmit (evt) {
   evt.preventDefault();
   profileNameElement.textContent = profileNameInput.value;
   profileStatusElement.textContent = profileStatusInput.value;
-  closePopupButton.addEventListener('click', popupClose);
+  popupClose ();
 }
 formElement.addEventListener('submit', handleFormSubmit); 
