@@ -38,3 +38,7 @@
 @import url(../blocks/profile/__row/profile__row.css);
 @import url(../blocks/profile/__status/profile__status.css);
 
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__image-figure/popup__image-figure.css);
+@import url(../blocks/popup/__image-text/popup__image-text.css);
+@import url(../blocks/popup/__content-image/popup__content-image.css);
