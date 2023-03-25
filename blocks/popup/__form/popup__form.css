@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-top: 54px;
+  margin-top: 34px;
   width: 358px;
 }
 
 @media (max-width: 900px) {
   .popup__form {
-    margin-top: 75px;
+    margin-top: 25px;
     width: 238px;
   }
 }

@@ -10,8 +10,13 @@
   font-size: 14px;
   line-height: 17px;
   padding-bottom: 9px;
+  outline: none;
 }
 
 .popup__input:first-of-type {
   margin-top: 0;
 }
+
+.popup__input:invalid {
+  border-bottom: 1px solid rgba(255, 0, 0, 1);
+} 
