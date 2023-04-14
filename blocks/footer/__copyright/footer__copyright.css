@@ -1,12 +1,20 @@
 .footer__copyright {
   margin: 0;
-  font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-  color:#545454;
+  font-weight: 400;
+  color: #545454;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 1024px) {
+  .footer__copyright {
+    /* calc((100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+    font-size: calc((100vw - 320px)/(1024 - 320) * (18 - 14) + 14px);
+    line-height: calc((100vw - 320px)/(1024 - 320) * (22 - 17) + 17px);
+  }
+}
+
+@media screen and (max-width: 320px) {
   .footer__copyright {
     font-size: 14px;
     line-height: 17px;

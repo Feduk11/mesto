@@ -1,27 +1,33 @@
 .profile__edit-button {
-  min-width: 24px;
+  padding: 0;
+  width: 24px;
   height: 24px;
-  background-image: url(../../../images/profile/__edit-button.svg);
-  background-repeat: no-repeat;
-  background-size: 10px;
-  background-color: transparent;
-  background-position: center;
-  border: 1px solid #FFFFFF;
-  align-self: center;
-  margin-left: 18px;
+  outline: none;
+  border: 1px solid #fff;
+  background: transparent url('../../../images/edit-button.svg') no-repeat center / 10px;
   cursor: pointer;
-  transition: opacity .6s ease-in;
+  margin-top: 5px;
+  transition: opacity 0.3s;
+  grid-area: profile__edit-button;
+  -ms-grid-row-align: center;
+          align-self: center;
 }
 
 .profile__edit-button:hover {
-  opacity: .5;
+  opacity: 0.6;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   .profile__edit-button {
-    min-width: 18px;
-    height: 18px;
-    margin-left: 10px;
-    margin-right: 19px;
+    /* calc((100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+    width: calc((100vw - 320px)/(1024 - 320) * (24 - 18) + 18px);
+    height: calc((100vw - 320px)/(1024 - 320) * (24 - 18) + 18px);
+    background-size: calc((100vw - 320px)/(1024 - 320) * (10 - 7.5) + 7.5px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile__edit-button {
+    transform: translateX(16px);
   }
 }

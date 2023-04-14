@@ -1,13 +1,19 @@
 .popup__title {
   margin: 0;
-  font-weight: 900;
   font-size: 24px;
   line-height: 29px;
+  font-weight: 900;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 1024px) {
+  .popup__title {
+    /* calc((100vw - Vmin)/(Vmax - Vmin) * (Fmax - Fmin) + Fmin); */
+    font-size: calc((100vw - 320px)/(1024 - 320) * (24 - 18) + 18px);
+  }
+}
+
+@media screen and (max-width: 320px) {
   .popup__title {
     font-size: 18px;
-    line-height: 22px;
   }
 }

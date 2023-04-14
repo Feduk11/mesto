@@ -1,8 +1,11 @@
 .element {
+  width: 282px;
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  max-width: 282px;
-  background-color: #FFFFFF;
+  justify-self: center;
+  -webkit-flex-direction: column;
+          flex-direction: column;
   border-radius: 10px;
+  overflow: hidden;
   position: relative;
 }

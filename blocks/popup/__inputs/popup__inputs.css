@@ -1,16 +1,25 @@
 .popup__inputs {
   margin: 0;
   padding: 0;
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+          flex-direction: column;
   border: none;
   padding-top: 54px;
   padding-bottom: 18px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   .popup__inputs {
-    padding-top: 75px;
+    padding-top: calc((100vw - 320px)/(1024 - 320) * (54 - 70) + 70px);
+    padding-bottom: calc((100vw - 320px)/(1024 - 320) * (18 - 15) + 15px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__inputs {
+    padding-top: 70px;
     padding-bottom: 15px;
   }
 }
