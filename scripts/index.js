@@ -17,11 +17,11 @@ import {
   popupImg, 
   popupTitleImg, 
   validationConfig 
-} from './Constants.js'
+} from './constants.js'
 
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
-import initialCards from './Data.js';
+import initialCards from './data.js';
 
 const formValidators = {};
 

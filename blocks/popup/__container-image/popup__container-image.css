@@ -8,5 +8,5 @@
   gap: 10px;
   position: relative;
   box-shadow: none;
-  max-width: calc((100vw - 320px)/(1280 - 320) * (816 - 240) + 240px);
+  max-width: 75vw;
 }
