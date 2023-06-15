@@ -12,6 +12,6 @@ https://feduk11.github.io/mesto/
 * Сборщик Webpack
 * Проект подключен к серверу
 * API
-### ![Адаптив](https://github.com/Feduk11/mesto/blob/main/images/gif-mesto.gif)
+### ![Адаптив](https://https://github.com/Feduk11/mesto/tree/main/src/images/gif-mesto.gif)
 #### Планы по доработке проекта:
 * *Регистрация пользователей*.
