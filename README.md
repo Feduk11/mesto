@@ -10,6 +10,8 @@ https://feduk11.github.io/mesto/
 * Методологии ООП
 * Валидация форм
 * Сборщик Webpack
+* Проект подключен к серверу
+* API
 ### ![Адаптив](https://github.com/Feduk11/mesto/blob/main/images/gif-mesto.gif)
 #### Планы по доработке проекта:
 * *Регистрация пользователей*.
