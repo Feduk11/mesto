@@ -22,16 +22,16 @@ export default class Card {
     return cardElement;
   }
 
-  _isUserCard() {
+  _existUserCard() {
     return this._ownerId === this._userId;
   }
 
-  _isUserLike() {
+  _existUserLike() {
     return this._likes.some(item => item._id === this._userId);
   }
 
   _toggleLike() {
-    if (this._isUserLike()) {
+    if (this._existUserLike()) {
       this._likeButton.classList.add('element__like-btn_active');
     } else {
       this._likeButton.classList.remove('element__like-btn_active');
@@ -46,10 +46,10 @@ export default class Card {
 
   _setEventListeners() {
     this._likeButton.addEventListener('click', () => {
-      this._handleLikeButtonClick(this, this._cardId, this._isUserLike());
+      this._handleLikeButtonClick(this, this._cardId, this._existUserLike());
     });
 
-    if (this._isUserCard()) {
+    if (this._existUserCard()) {
       this._deleteButton.addEventListener('click', () => {
         this._handleDeleteButtonClick(this._cardId, this._element);
       });
@@ -74,11 +74,11 @@ export default class Card {
     this._cardImage.alt = `${this._titleImg} (фото)`;
     this._cardLikes.textContent = this._likes.length;
 
-    if (!this._isUserCard()) {
+    if (!this._existUserCard()) {
       this._deleteButton.classList.add('element__delete-btn_disabled');
     }
 
-    if (this._isUserLike()) {
+    if (this._existUserLike()) {
       this._likeButton.classList.add('element__like-btn_active');
     }
 

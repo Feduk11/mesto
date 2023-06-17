@@ -4,7 +4,7 @@ export default class Api {
     this._headers = headers;
   }
 
-  _resStatus(res) {
+  _checkResponse(res) {
     if (res.ok) {
       return res.json();
     }
@@ -15,7 +15,7 @@ export default class Api {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 
@@ -28,7 +28,7 @@ export default class Api {
         about: about
       })
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 
@@ -40,7 +40,7 @@ export default class Api {
         avatar: avatar
       })
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 
@@ -48,7 +48,7 @@ export default class Api {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 
@@ -61,7 +61,7 @@ export default class Api {
         link: link
       })
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 
@@ -70,7 +70,7 @@ export default class Api {
       method: 'DELETE',
       headers: this._headers,
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 
@@ -79,7 +79,7 @@ export default class Api {
       method: 'PUT',
       headers: this._headers,
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 
@@ -88,7 +88,7 @@ export default class Api {
       method: 'DELETE',
       headers: this._headers,
     })
-      .then(res => this._resStatus(res))
+      .then(res => this._checkResponse(res))
       .catch(err => console.error(err))
   }
 }
