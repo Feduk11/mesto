@@ -11,16 +11,18 @@ export default class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
+  _request(url, options) {
+    return fetch(url, options).then(this._checkResponse)
+  }
+
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return this._request(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 
   updateUserInfo(name, about) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return this._request(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
@@ -28,32 +30,26 @@ export default class Api {
         about: about
       })
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 
   updateUserAvatar(avatar) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
+    return this._request(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
         avatar: avatar
       })
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, {
+    return this._request(`${this._baseUrl}/cards`, {
       headers: this._headers,
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 
   addNewCard(name, link) {
-    return fetch(`${this._baseUrl}/cards`, {
+    return this._request(`${this._baseUrl}/cards`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
@@ -61,34 +57,26 @@ export default class Api {
         link: link
       })
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 
   deleteCard(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+    return this._request(`${this._baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
       headers: this._headers,
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 
   addLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    return this._request(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: this._headers,
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 
   deleteLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+    return this._request(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: 'DELETE',
       headers: this._headers,
     })
-      .then(res => this._checkResponse(res))
-      .catch(err => console.error(err))
   }
 }
